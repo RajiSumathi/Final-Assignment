@@ -57,3 +57,7 @@ To start the Flask application, run the following command:
 
 Error Handling:
 If an error occurs during query counting (e.g., invalid date prefix or log file not found), the API will return an error message along with a status code of 500.
+
+Output:
+<img width="695" alt="Screenshot 2024-03-23 at 11 08 13 PM" src="https://github.com/RajiSumathi/Final-Assignment/assets/164464238/e025d33b-3d2a-42e0-b80d-967b51ea43fd">
+
