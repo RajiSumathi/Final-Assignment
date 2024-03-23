@@ -6,6 +6,8 @@ This Flask application counts queries from a log file based on a provided date p
 Table of Contents:
 Overview,
 Setup,
+prerequisites,
+Explanation,
 Usage,
 API Endpoint,
 Error Handling
@@ -23,6 +25,31 @@ To set up the application, follow these steps:
  pip install Flask pandas
  
 3)Place your log file (hn_logs.tsv) in the project directory.
+
+Prerequisites:
+Before running the application, make sure you have the following installed:
+
+Python 3.x,
+Flask,
+pandas
+
+Explanation:
+
+1)Import Libraries: It imports necessary libraries such as pandas for data manipulation, urllib.parse for URL decoding, datetime for handling date and time, and Flask for creating the web application.
+
+2)Set Constants: It defines constants such as the path to the log file (LOG_FILE_PATH) and a list of date formats (DATE_FORMATS) to be used for parsing dates.
+
+3)Define Functions:
+
+ *preprocess_logs: Reads the log file into a DataFrame and converts the first column to datetime format.
+
+ *decode_url: Decodes a URL to extract the domain name.
+
+ *get_count: Counts the number of queries in the log file for a given date prefix using various date formats.
+
+4)API Endpoint: Defines a Flask route (/1/queries/count/<date_prefix>) that handles HTTP GET requests. When a request is received, it preprocesses the log file, counts the queries for the specified date prefix, and returns the count as a JSON response.
+
+5)Run the Application: If the script is executed directly (i.e., not imported as a module), the Flask application is started in debug mode.
 
 Usage:
 To start the Flask application, run the following command:
