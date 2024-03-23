@@ -3,14 +3,6 @@
 FLASK APPLICATION FOR QUERY COUNTING:
 This Flask application counts queries from a log file based on a provided date prefix. It provides a simple REST API endpoint to retrieve query counts.
 
-Table of Contents:
-Overview,
-prerequisites,
-Setup,
-Explanation,
-Usage,
-Error Handling
-
 Overview:
 The Query Counter Flask Application is built to analyze logs containing query information and count the number of queries based on a specified date prefix. The application utilizes Flask, a micro web framework for Python, to provide a RESTful API for accessing query counts.
 
