@@ -5,15 +5,21 @@ This Flask application counts queries from a log file based on a provided date p
 
 Table of Contents:
 Overview,
-Setup,
 prerequisites,
+Setup,
 Explanation,
 Usage,
-API Endpoint,
 Error Handling
 
 Overview:
 The Query Counter Flask Application is built to analyze logs containing query information and count the number of queries based on a specified date prefix. The application utilizes Flask, a micro web framework for Python, to provide a RESTful API for accessing query counts.
+
+Prerequisites:
+Before running the application, make sure you have the following installed:
+
+Python 3.x,
+Flask,
+pandas
 
 Setup:
 To set up the application, follow these steps:
@@ -25,13 +31,6 @@ To set up the application, follow these steps:
  pip install Flask pandas
  
 3)Place your log file (hn_logs.tsv) in the project directory.
-
-Prerequisites:
-Before running the application, make sure you have the following installed:
-
-Python 3.x,
-Flask,
-pandas
 
 Explanation:
 
@@ -55,15 +54,6 @@ Usage:
 To start the Flask application, run the following command:
  python app.py,
  This will start the Flask development server, and you can access the API endpoint to retrieve query counts.
-
-API Endpoint:
-The API endpoint for retrieving query counts is:
- GET /1/queries/count/<date_prefix>,
- Replace <date_prefix> with the date prefix you want to count queries for. The endpoint returns a JSON response containing the count of queries for the specified date prefix.
-
-Example usage:
- GET http://localhost:5000/1/queries/count/2015-08,
- This will return a JSON response with the count of queries for August 2015.
 
 Error Handling:
 If an error occurs during query counting (e.g., invalid date prefix or log file not found), the API will return an error message along with a status code of 500.
