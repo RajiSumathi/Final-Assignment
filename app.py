@@ -1,5 +1,4 @@
 import pandas as pd
-from urllib.parse import unquote, urlparse
 from datetime import datetime
 
 from flask import Flask, jsonify
@@ -16,18 +15,10 @@ DATE_FORMATS = [
     "%Y-%m-%d %H:%M:%S"
 ]
 
-
 def preprocess_logs(LOG_FILE_PATH):
     df = pd.read_csv(LOG_FILE_PATH, sep='\t', header=None)
     df[0] = pd.to_datetime(df[0])
     return df
-
-
-def decode_url(url):
-    url = url.strip('%22')
-    decoded_url = urlparse(unquote(url)).netloc
-    return decoded_url
-
 
 def get_count(df, date_prefix, date_formats):
     for fmt in date_formats:
