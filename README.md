@@ -34,8 +34,6 @@ Explanation:
 
  *preprocess_logs: Reads the log file into a DataFrame and converts the first column to datetime format.
 
- *decode_url: Decodes a URL to extract the domain name.
-
  *get_count: Counts the number of queries in the log file for a given date prefix using various date formats.
 
 4)API Endpoint: Defines a Flask route (/1/queries/count/<date_prefix>) that handles HTTP GET requests. When a request is received, it preprocesses the log file, counts the queries for the specified date prefix, and returns the count as a JSON response.
